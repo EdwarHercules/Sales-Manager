@@ -1,0 +1,17 @@
+version: "3.1"
+services:
+  topogigios_backend:
+    image: topogigios_backend:1.0
+    container_name: topogigios_backend
+    ports:
+      - 9080:9080
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+    restart: unless-stopped
+
+  topogigios_frontend:
+    image: topogigios_frontend:1.0
+    container_name: topogigios_frontend
+    ports:
+      - 3090:3090
+    restart: unless-stopped
